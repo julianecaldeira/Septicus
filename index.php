@@ -61,7 +61,7 @@
 			<div class="modal-content">
 		
 				<div class="modal-header">
-					<img id="imagembanner" src="imagens/logo.png" width="20%">
+					<img id="imagembanner" src="imagens/SepticusLogo.png" width="200px;">
 					<br/>
 					<center><h5 class="modal-title" id="exampleModalLabel">RELATÓRIO SIMPLIFICADO</h5></center>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -179,6 +179,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="sobre.php">Sobre</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="referencias.php">Referências</a>
+				</li>
 				</ul>
 			</div>
 		</div>
@@ -189,7 +192,7 @@
 		<!-- Jumbotron -->
 		<div class="jumbotron" style="padding-top: 5px; margin-top: 10px;">
 			<P></P>
-				<center><img id="imagembanner" src="imagens/logo2.png" width="20%"></center>
+				<center><img id="imagembanner" src="imagens/SepticusLogo.png" width="230px;"></center>
 			<P></P>
 			<h5>Calculadora Séptica</h5>
 			<p class="lead">Preencha todos os campos abaixo.</p>
@@ -313,7 +316,7 @@
 			text-align: center; 
 			font-size: 20px; 
 			font-weight: 800">
-			Diâmetro mínimo: 0.30m
+			Diâmetro mínimo: 0.30m - Diâmetro recomendado: 1.00m à 1.50m
 			<p></p>
 			<br>
 
@@ -379,7 +382,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<center><img id="imagembanner" src="imagens/logo2.png" width="5%"></center>
+	<center><img id="imagembanner" src="imagens/SepticusLogo.png" width="100px;"></center>
 
 </body> <!-- fim corpo do site -->
 

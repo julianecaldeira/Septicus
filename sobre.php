@@ -24,6 +24,7 @@
         border: 1px solid blue
         padding:3px 5px;
     }
+
     </style>
 
 
@@ -44,14 +45,17 @@
      			</button>
       		<div class="collapse navbar-collapse" id="navbarResponsive">
         		<ul class="navbar-nav ml-auto">
-          			<li class="nav-item active">
+          			<li class="nav-item">
             			<a class="nav-link" href="index.php">Dimensionar
               				<span class="sr-only">(current)</span>
             			</a>
           			</li>
-          			<li class="nav-item">
-            			<a class="nav-link" href="#">Sobre</a>
-          			</li>
+          			<li class="nav-item active">
+					        <a class="nav-link" href="sobre.php">Sobre</a>
+			        	</li>
+				        <li class="nav-item">
+					        <a class="nav-link" href="referencias.php">Referências</a>
+				        </li>
         		</ul>
       		</div>
     	</div>
@@ -61,9 +65,9 @@
   	<!-- Títulos -->
   	<div class="container text-center">
   	<!-- Jumbotron -->
-      <div class="jumbotron" style="padding-top: 5px; margin-top: 10px;">
+      <div class="jumbotron" style="padding-top: 5px; margin-top: 10px;" background-color="blue">
         <P></P>
-        <center><img id="imagembanner" src="imagens/logo2.png" width="20%"></center>
+        <center><img id="imagembanner" src="imagens/SepticusLogo.png" width="230px;"></center>
         <P></P>
         <h5>Calculadora Séptica</h5>
         <p class="lead">Sobre</p>
@@ -86,12 +90,12 @@ juntamente com o professor orientador
   
     <!-- Botão "DIMENSIONAR" -->
     <p></p>
-    <a class="btn btn-outline-primary btn-lg" href="dimensionar.html" role="button">Dimensionar</a>
+    <a class="btn btn-outline-primary btn-lg" href="index.php" role="button">Dimensionar</a>
 
   </div>
 
   <!-- logo rodapé -->	
-  <center><img id="imagembanner" src="imagens/logo2.png" width="8%"></center> 
+  <center><img id="imagembanner" src="imagens/SepticusLogo.png" width="100px;"></center> 
 
 </body>
 

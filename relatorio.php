@@ -5,6 +5,7 @@
 
 <!------ Include the above in your HEAD tag ---------->
 
+
 <style type="text/css">
 .invoice {
     position: relative;
@@ -74,7 +75,7 @@ if(isset($_POST["diametroSumidouro"])){
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="page-header">
-                    <i class="fa fa-globe"></i> <img id="imagembanner" src="imagens/logo2.png" width="35%">
+                    <i class="fa fa-globe"></i> <img id="imagembanner" src="imagens/SepticusLogo.png" width="35%">
                 </h2>
             </div><!-- /.col -->
         </div>
@@ -111,7 +112,7 @@ if(isset($_POST["diametroSumidouro"])){
                 <br>
                 Dimensionamento: <b>Tanque séptico residencial</b><br>
                 Dimensionamento: <b>Sumidouro</b><br>
-                <b>Quantidativo de materiais</b><br>
+                <b>Quantitativo de materiais</b><br>
             </div><!-- /.col -->
         
         </div><!-- /.linhas de informações sobre o projeto -->
@@ -120,6 +121,7 @@ if(isset($_POST["diametroSumidouro"])){
         <!-- INFORMAÇÕES DO MODAL SUSPENSO: INFORMAÇÕES GEOMETRICAS DO DIMENSIONAMENTO -->
         
         <h4>Dimensões</h4> <!-- titulo -->
+        <p></p>
         <div class="table-responsive">
             <table class="table">
                 <tbody>
@@ -128,84 +130,79 @@ if(isset($_POST["diametroSumidouro"])){
                         Exemplo: só parece a segunda linha de sumidouro caso o mesmo tenha sido selecionado. 
                         Se a fossa for cilindra apareça uma linha que tenha diametro e profundidade, 
                         senão apareça uma linha que tenha largura, comprimento e profundidade!-->
-                    <tr>
-                        <th>Tanque séptico em formato:</th>
-                        <td> <?php  echo $geometria  ?> </td>
-                        <th><?php echo $diametroOuLargura  ?> (m):</th>
-                        <td> 
-                        <?php 
-                        if($geometria == "retangular"){
-                            echo $largura;
-                        }elseif($geometria == "cilindrico"){
-                            echo $diametro;
-                        }
-                        ?> 
-                        </td>
-                        <?php 
 
-                        if($geometria == "retangular"){
-                            echo "<th> Comprimento (m) : </th> ";
-                            echo "<td> " . $comprimento . "</td>";
-                        } 
+                    <thead>
+                        <tr>
+                            <th>Equipamento</th>
+                            <th>Geometria</th>
+                            <th><?php echo $diametroOuLargura  ?> (m)</th>
+                            
+                            <?php 
+                                if($geometria == "retangular"){
+                                    echo "<th> Comprimento (m) </th> ";
+                            }                         
+                            ?>
+
+                            <th>Profundidade (m)</th>
+                            <th>Volume total (m³)</th>
+                        </tr>
+                    </thead> 
+
+                    <tbody>
+                        <tr>
+                            <th> Tanque séptico </th>
+                            <td> <?php  echo $geometria  ?> </td>
+                            
+                            <td> 
+                            <?php 
+                            if($geometria == "retangular"){
+                                echo $largura;
+                            }elseif($geometria == "cilindrico"){
+                                echo $diametro;
+                            }
+                            ?> 
+                            </td>
+                            
+                            <?php                          
+                                if($geometria == "retangular"){
+                                    echo "<td> " . $comprimento . "</td>";
+                                } 
+                            ?>
+
+                            <td> <?php  echo $profundidadeTanque?> </td>
+                            <td> <?php echo $volumeTotalTanque ?> </td>
+                        </tr>
+
+
                         
-                        ?>
-                        <!-- <th>Comprimento (m):</th>
-                        <td> ??? </td> -->
-                        <th>Profudidade (m):</th>
-                        <td> 
-                            <?php  echo $profundidadeTanque?> 
-                        </td>
-
-                        <th>Volume total (m³):</th>
-                        <td> 
-                            <?php echo $volumeTotalTanque ?> 
-                        </td>
-                    </tr>
-                    <!-- Campo caso possua sumidouro -->
 
                     <?php 
                     ## SE POSSUI SUMIDOURO ##
                     if($diametroSumidouro != ""){
 
+                        echo "<thead>";
                         echo "<tr>";
-                        
-                        echo "<th> Sumidouro em formato : </th>";
-                        echo "<td> Cilíndrico </td> ";
-                        echo "<th> Diametro (m):</th>";
-                        echo "<td>" . $diametroSumidouro . "</td>";
-                        echo "<th> Profudidade (m): </th>";
-                        echo "<td>" . $profundidadeSumidouro . "</td>";
-                        echo "<th> Volume total (m³): </th> ";
-                        echo "<td>" . $volumeTotalSumidouro . "</td>";
-
+                                echo "<th> Equipamento </th>";
+                                echo "<th> Geometria </th>";
+                                echo "<th> Diametro (m) </th>";
+                                echo "<th> Profundidade (m) </th>";
+                                echo "<th> Volume total (m³) </th>";
                         echo "</tr>";
+                        echo "</thead>";
+
+                        echo "<tbody>";
+                                echo "<th> Sumidouro </th>";
+                                echo "<td> cilíndrico </td>";
+                                echo "<td>" . $diametroSumidouro . "</td>";
+                                echo "<td>" . $profundidadeSumidouro . "</td>";
+                                echo "<td>" . $volumeTotalSumidouro . "</td>";
+                        echo "</tbody>";
 
                     }else{
-                        echo "<h5> Não possui sumidouro. </h5>";
+                        echo "<h5> Não possui sumidouro! </h5>";
                     }
 
                     ?>
-                    <!--
-                    <tr>
-                        <th>Sumidouro em formato:</th>
-                        <td>Circular</td>
-                        <th>Diametro (m):</th>
-                        <td> ??? </td>
-                        <th></th>
-                        <td></td>
-                        <th>Profudidade (m):</th>
-                        <td> ??? </td>
-                        <th>Volume total (m³):</th>
-                        <td> ??? </td>
-                    </tr> -->
-                    <!-- apenas para criar uma linha abaixo da tabela-->
-                    <tr>
-                        <th></th><td></td>
-                        <th></th><td></td>
-                        <th></th><td></td>
-                        <th></th><td></td>
-                        <th></th><td></td>
-                    </tr>
 
                 </tbody>
             </table>
@@ -213,6 +210,7 @@ if(isset($_POST["diametroSumidouro"])){
        <br><br>
 
        <!-- TABELA INFORMATIVA CONSUMO DE MATERIAIS-->
+       <div id="tabelaConsumoMateriais">
        <h4>Consumo de materiais por m³ de concreto</h4> <!-- titulo -->
        <div class="row">
            <div class="col-xs-12 table-responsive">
@@ -225,8 +223,8 @@ if(isset($_POST["diametroSumidouro"])){
                            <th>Traço</th>
                            <th>Cimento (saco 50kg)</th>  
                            <th>Cal (saco 20kg)</th> 
-                           <th>Areia (m³)</th> 
-                           <th>Pedra britada (m³)</th> 
+                           <th>Areia (Litros)</th> 
+                           <th>Pedra britada (Litros)</th> 
                            <th>Água (Litros)</th>  
                        </tr>                     
                    </thead>
@@ -236,10 +234,10 @@ if(isset($_POST["diametroSumidouro"])){
                            <td>Concreto</td>
                            <td>Contrapiso</td>
                            <td>1:3:6</td>
-                           <td>4,20</td>
+                           <td>4.20</td>
                            <td>-</td>
-                           <td>0,564</td>
-                           <td>0,441</td>
+                           <td>0.564</td>
+                           <td>0.441</td>
                            <td>198</td>
                         </tr>
 
@@ -249,7 +247,7 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>1:0:6</td>
                             <td>10</td>
                             <td>-</td>
-                            <td>1,080</td>
+                            <td>1.080</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -258,9 +256,9 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>Argamassa</td>
                             <td>Assentamento</td>
                             <td>1:4:16</td>
-                            <td>3,65</td>
+                            <td>3.65</td>
                             <td>9</td>
-                            <td>1,400</td>
+                            <td>1.400</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -269,9 +267,9 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>Argamassa</td>
                             <td>Chapisco</td>
                             <td>1:0:8</td>
-                            <td>7,40</td>
+                            <td>7.40</td>
                             <td>-</td>
-                            <td>1,100</td>
+                            <td>1.100</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -280,9 +278,9 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>Argamassa</td>
                             <td>Emboço</td>
                             <td>1:1:12</td>
-                            <td>4,90</td>
-                            <td>2,900</td>
-                            <td>1,100</td>
+                            <td>4.90</td>
+                            <td>2.900</td>
+                            <td>1.100</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -291,9 +289,9 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>Argamassa</td>
                             <td>Reboco</td>
                             <td>1:4:8</td>
-                            <td>3,30</td>
-                            <td>7,800</td>
-                            <td>1,100</td>
+                            <td>3.30</td>
+                            <td>7.800</td>
+                            <td>1.100</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -301,7 +299,8 @@ if(isset($_POST["diametroSumidouro"])){
                    </tbody>
                </table>
            </div><!-- /.col -->
-       </div><!-- /.tabela -->
+           </div>
+                </div>
        <br><br>
 
         <!-- TABELA QUANTITATIVO DE MATERIAIS-->
@@ -359,47 +358,98 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>Bloco cerâmico</td>
                             <td>19x19x9cm</td>
                             <td><?php echo $blocoTanque; ?> </td>
-                            <td><?php echo $blocoSumidouro; ?> </td>
-                            <td><b><?php echo $blocoTotal; ?></b></td>
+                            <td>
+                            <?php 
+                    ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $blocoSumidouro; 
+                    }else{
+                        echo "0";
+                    } 
+                            ?> 
+                            </td>  <!-- sumidouro -->
+                            <td><b><?php                     
+                            ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $blocoTotal; 
+                    }else{
+                        echo $blocoTanque;
+                    } ?></b></td>
                         </tr>
                         <tr>
                             <td>Cimento CP III</td>
                             <td>Saco 50Kg</td>
                             <td><?php echo $cimentoTanque; ?> </td>
-                            <td><?php echo $cimentoSumidouro; ?> </td>
-                            <td><b><?php echo $cimentoTotal; ?></b></td>
+                            <td><?php                     
+                    ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $cimentoSumidouro; 
+                    }else{
+                        echo "0";
+                    }  ?>   </td> <!-- sumidouro -->
+                            <td><b><?php                     
+                    if($diametroSumidouro != ""){
+                        echo $cimentoTotal; 
+                    }else{
+                        echo $cimentoTanque;
+                    }  ?></b></td>
                         </tr>
                         <tr>
                             <td>Cal</td>
                             <td>Saco 20Kg</td>
                             <td><?php echo $calTanque; ?></td>
-                            <td><?php echo $calSumidouro; ?></td>
-                            <td><b><?php echo $calTotal; ?></b></td>
+                            <td><?php                     
+                    ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $calSumidouro; 
+                    }else{
+                        echo "0";
+                    }  ?>   </td> <!-- sumidouro -->
+                            <td><b><?php                             
+                        ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $calTotal; 
+                    }else{
+                        echo $calTanque;
+                    }  ?></b></td>
                         </tr>
                         <tr>
                             <td>Areia média</td>
-                            <td>m³</td>
+                            <td>Litros</td>
                             <td><?php echo $areiaTanque; ?></td>
-                            <td><?php echo $areiaSumidouro; ?></td>
-                            <td><b><?php echo $areiaTotal; ?></b></td>
+                            <td><?php                     
+                    ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $areiaSumidouro; 
+                    }else{
+                        echo "0";
+                    }  ?>
+                            </td> <!-- sumidouro -->
+                            <td><b><?php                         
+                    ## SE POSSUI SUMIDOURO ##
+                    if($diametroSumidouro != ""){
+                        echo $areiaTotal; 
+                    }else{
+                        echo $areiaTanque;
+                    }   ?></b></td>
                         </tr>
                         <tr>
                             <td>Brita 01</td>
-                            <td>m³</td>
+                            <td>Litros</td>
                             <td><?php echo $brita01Tanque; ?></td>
-                            <td><?php echo $brita01Sumidouro; ?></td>
+                            <td><?php echo $brita01Sumidouro; ?></td> 
                             <td><b><?php echo $brita01Total; ?></b></td>
                         </tr>
                         <tr>
                             <td>Brita 03 ou 04</td>
-                            <td>m³</td>
+                            <td>Litros</td>
                             <td>0</td>
                             <td><?php echo $brita03Sumidouro; ?></td>
                             <td><b><?php echo $brita03Total; ?></b></td>
                         </tr>
                         <tr>
                             <td>Água</td>
-                            <td>L</td>
+                            <td>Litros</td>
                             <td><?php echo $aguaTanque; ?></td>
                             <td>0</td>
                             <td><b><?php echo $aguaTotal; ?></b></td>
@@ -415,10 +465,13 @@ if(isset($_POST["diametroSumidouro"])){
             <div class="col-md-12">
                 <p class="lead" align="justify"> 
                     <b>OBSERVAÇÕES:</b></br>
+                    ◦ <b>A quantidade total de materiais é arredondado para o número inteiro imediatamente superior.</b><br>
+                    ◦ DICA: Uma lata equivale a 18 litros; 1 metro cúbico (m³) equivale a 1.000 litros.<br>
                     ◦ As tampas das câmaras deverão ser feitas com placas pré-moldadas de concreto, para facilitar a sua execução e até a sua remoção. <br>
                     ◦ No fundo do sumidouro existe uma camada protetora de brita, que, segundo a norma NBR 13969/96, não deve ser inferior a 30 cm. Será colocada brita número 3 ou 4 com uma altura de 50 cm.<BR> 
                     ◦ Deverá ser observado o afastamento mínimo de 1,50m de qualquer parede, obstáculos, árvores ou cerca de divisa de terreno e de acordo com o tamanho do terreno.<br>
                     ◦ O impermeabilizante de ser aplicado de acordo com as instruções do fabricante. Todas as paredes da fossa e o fundo deve ser impermeabilizado.<br>
+                    ◦ A atual versão da aplicação não calcula tanques em série.<br>
                 </p>
                 
             </div><!-- /.col -->
@@ -428,9 +481,9 @@ if(isset($_POST["diametroSumidouro"])){
         <!-- Botões no final da página / dimensionar:retorna para os dados de entra / Memorial de cálculo: exibe ou faz o download do pdf com o passo a passo do calculo / Gerar PDF: salva a página atual no formato PDF -->
         <div class="row no-print">
             <div class="col-xs-12">
-                <a href="" class="btn btn-default"><i class="fa fa-print"></i> Dimensionar </a>
-                <button class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Memorial de cálculo </button>
-                <button class="btn btn-primary pull-right" onclick="window.print();" style="margin-right: 5px;" title="" data-original-title="Este comando também é usado<br></ib>para salvar o PDF. Veja o botão Memorial para mais informações."><i class="fa fa-download"></i> Gerar PDF</button>
+                <a href="" class="btn btn-default" href="index.php"><i class="fa fa-print"></i> Dimensionar </a>
+                <button class="btn btn-primary pull-right" onclick="location.href='referencias.php';"; style="margin-right: 5px;">Referências</button>
+                <button class="btn btn-primary pull-right" onclick=window.print(); style="margin-right: 5px;">Gerar PDF</button>
             </div>
         </div>
     </section>
