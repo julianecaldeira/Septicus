@@ -1,61 +1,90 @@
-# [Start Bootstrap - Bare](https://startbootstrap.com/template/bare/)
+# Septicus
+<p align="justify">
+Septicus é um aplicativo em desenvolvimento, com o objetivo de auxiliar no dimensionamento de sistemas individuais de tratamento de esgotos domésticos, especificamente no cálculo de fossa séptica com sumidouro.
+</p>
 
-[Bare](https://startbootstrap.com/template/bare/) is a bare HTML starter template for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This template features predefined file paths for Bootstrap and jQuery, so you can quickly create Bootstrap websites.
+<p align="justify">
+O aplicativo foi pensando como uma Aplicação Web, estruturada inicialmente no Visual Studio Code®, utilizando as linguagens HTML, JavaScript e estilizado em CSS.
+</p>
 
-## Preview
+<p align="center">
+  <img width="500" height="166" src="https://github.com/julianecaldeira/SepticusPHP/blob/main/Imagens/SepticusLogo.png">
+</p>
 
-[![Bare Preview](https://assets.startbootstrap.com/img/screenshots/templates/bare.png)](https://startbootstrap.github.io/startbootstrap-bare/)
+## IFBA: Fomento à inovação
 
-**[View Live Preview](https://startbootstrap.github.io/startbootstrap-bare/)**
+<p align="justify">
+O aplicativo Septicus nasceu do concurso: "uma ideia na cabeça, uma inovação na mão", do Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA), promovido pela Pró-Reitoria de Pesquisa, Pós Graduação e Inovação (PRPGI), sendo o protótipo finalista da 8ª edição do concurso.
+A partir daí a ideia foi polida e submetida, juntamente com o professor orientador Davi Santiago Aquino, no programa Institucional de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação (PIBITI) estando sob desenvolvimento.
+</p>
 
-## Status
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-bare/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-bare.svg)](https://www.npmjs.com/package/startbootstrap-bare)
-[![Build Status](https://travis-ci.org/StartBootstrap/startbootstrap-bare.svg?branch=master)](https://travis-ci.org/StartBootstrap/startbootstrap-bare)
-[![dependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-bare/status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-bare)
-[![devDependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-bare/dev-status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-bare?type=dev)
 
-## Download and Installation
+<h2><a id="user-content--como-executar-o-projeto" class="anchor" aria-hidden="true" href="#-como-executar-o-projeto"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><g-emoji class="g-emoji" alias="rocket" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png">🚀</g-emoji> Como executar o projeto</h2>
 
-To begin using this template, choose one of the following options to get started:
+A versão atual do projeto pode ser acessada através do endereço http://septicus.com.br/.<p>
+Também podemos considerar como parte desse projeto duas versões com o código fonte disponível:
 
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template/bare/)
-* Install via npm: `npm i startbootstrap-bare`
-* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-bare.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-bare)
+<ol>
+  <li><h3>Septicus_Beta_HTML (versão simplificada)</h3></li>
 
-## Usage
+  <div><pre>
 
-### Basic Usage
+   <strong># Clone este repositório </strong>
+      $ git clone https://github.com/julianecaldeira/Septicus/tree/main/Septicus_Beta_HTML
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+   <strong># Acesse a pasta do projeto na sua máquina </strong>
 
-### Advanced Usage
+   <strong># Execute a aplicação em desenvolvimento </strong>
+  Execute o atalho "Septicus" através do seu navegador
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+   💻🖥️ versão simplificada que pode ser acessada mesmo offline.
+  </pre></div>
 
-You must have npm and Gulp installed globally on your machine in order to use these features.
+  <li><h3>Septicus_Beta_PHP (código fonte do projeto)</h3></li>
 
-## Bugs and Issues
+  <div><pre>
+   
+   <strong># Clone este repositório </strong>
+      $ git clone https://github.com/julianecaldeira/Septicus
+      
+   <strong># Servidor local</strong>
+   <strong>Para que a aplicação funcione a pasta Septicus_Beta_PHP deverá estar dentro de um servidor</strong>
+    Para isso o usuário deverá instalar o servidor de sua preferência, recomenda-se [Wamp Server](https://www.wampserver.com/)
+    Exemplo de caminho de instalação (onde a pasta deverá ser colada) para o servidor Wamp Server:
+      <blockquote>
+        <p>C:\wamp64\www</p>
+      </blockquote>
+   ⚠️Lembrete: Antes de executar a aplicação o servidor deverá ser executado e ativado!
+  
+   <strong># Execute a aplicação em desenvolvimento</strong>
+   Através do endereço http://localhost/septicus.php será possível utilizar a aplicação
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-bare/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/template/bare/).
+   💻🖥️ versão que pode ser acessada mesmo offline.
+  </pre></div>  
+</ol>
 
-## About
+## Como contribuir para o projeto
+<ol>
+<li>Faça um <strong>fork</strong> do projeto.</li>
+<li>Crie uma nova branch com as suas alterações: <code>git checkout -b my-feature</code></li>
+<li>Salve as alterações e crie uma mensagem de commit contando o que você fez: <code>git commit -m "feature: My new feature"</code></li>
+<li>Envie as suas alterações: <code>git push origin my-feature</code></li>
+</ol>
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+<blockquote>
+<p>Caso tenha alguma dúvida confira este <a href="https://github.com/firstcontributions/first-contributions">guia de como contribuir no GitHub</a></p>
+</blockquote>
 
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
+## Licença
 
-Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+Este projeto é desenvolvido sob a licença MIT, veja o arquivo [LICENSE](https://github.com/julianecaldeira/Septicus/blob/main/LICENSE) para mais detalhes.
 
-* <https://davidmiller.io>
-* <https://twitter.com/davidmillerhere>
-* <https://github.com/davidtmiller>
+## Créditos
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-bare/blob/master/LICENSE) license.
+<p align="center">
+Aplicativo desenvolvido por Juliane Ferreira Caldeira (2021).
+</p>
+<p align="center">
+👷🏻‍♀️👩🏻‍💻🚀
+</p>
